@@ -1,0 +1,34 @@
+/* image properties / default width 2000px / default height 327px / */
+/* colors / blue #3ec0f5 / white #FFF / */
+
+body { background-color: #3ec0f5; margin: 0; padding:0; font-family: 'Roboto', sans-serif; }
+
+/* wrapper contains all the page elements */
+#wrapper { width:75vw; text-align: center; margin: 0 auto;}
+
+#logoPlaceholder {width:100%; max-width: 1000px; height:164px; background: url(/images/websafe/logov1.png) no-repeat center; background-size: contain; margin:0 auto; }
+
+/* styling for the main search bar on the homepage */
+#homeSearchBar { width:50%; padding:10px; margin-left:50px; border-radius: 20px; border:none; text-align:center; outline:none; font-size:24px; color: #242424;}
+
+/* styling for the main search button on the homepage */
+#homeSearchButton { height: 48px; margin: 0; padding:10px 15px 10px 15px; border:none; outline: none; background-color: #FFF; position: relative; top:5px; width:50px; left:-55px; text-transform: uppercase; font-weight: 600; background-image: url(/images/websafe/search.png); background-size: 25px; background-position: center; background-repeat: no-repeat; border-radius: 20px; }
+
+/* styles the h6 element "What's Trending Text" on the homepage */
+.whatsTrending { color:#FFF; font-size:36px; margin:0; padding:10px; font-weight: 600;}
+
+/* styles the div element containing topics and trends on the homepage */
+#trendingToday { width:100%; margin-top:25px;}
+
+/*styles the ul area containing the trending links/li elements */
+ul#trendingList { display: inline-block; width:75%; text-align: center; margin:0 auto; margin:25px 0 25px 0;}
+
+/*removes the bullets, margin and padding for ul and li elements */
+ul, li {list-style-type: none; padding:0; margin:0;}
+
+/* enables the li elements to sit inline rather than below one another, also adds spacing above, below and next to each element */
+li { display: inline-block; padding:10px 20px 10px 20px; color:#FFF;}
+
+/* hover state for when an li element is hovered over */
+li:hover { text-decoration: underline; cursor: pointer;}
+

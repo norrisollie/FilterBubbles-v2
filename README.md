@@ -1,2 +1,2 @@
 # FilterBubbles-v2
-Updated Filter Bubbles project
+Filter Bubbles project, v2
