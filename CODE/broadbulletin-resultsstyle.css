@@ -7,13 +7,13 @@ body { background-color: #FFF; margin: 0; padding:0; font-family: 'Roboto', sans
 
 /* header bar at the top of the results page with logo, search bar and menu button */
 
-#resultsHeader { position:fixed; top:0; left:0; width:100vw; height:50px; background-color: #3ec0f5; padding:0 margin:0; background-image: url(/images/websafe/smalllogo.png); background-position: 20px; background-repeat: no-repeat; background-size: 250px; z-index:100;}
+#resultsHeader { position:fixed; top:0; left:0; width:100vw; height:50px; background-color: #3ec0f5; padding:0 margin:0; background-image: url(images/websafe/smalllogo.png); background-position: 20px; background-repeat: no-repeat; background-size: 250px; z-index:100;}
 
 /* wrapper for the search bar and button in the header bar at the top of page */
 #searchWrapper { position: relative; width:25%; top:0; height:50px; background-color:transparent; position: relative; float: right; margin-right: 20px;}
 
 /* styling for the main search button on the results page */
-#resultsSearchButton { float: right; position: relative; top:-35px; height:40px; width: 40px; background: url(/images/websafe/search.png) no-repeat center; background-size: 15px; outline:none; border:none; }
+#resultsSearchButton { float: right; position: relative; top:-35px; height:40px; width: 40px; background: url(images/websafe/search.png) no-repeat center; background-size: 15px; outline:none; border:none; }
 
 /* styling for the search bar */
 #resultsSearchBar { position: relative; height: 40px; top:5px; width:100%; padding:10px; border-radius: 5px; border:none; text-align:left; outline:none; font-size:14px; }
