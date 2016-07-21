@@ -1,90 +1,71 @@
 <html>
-	<head>
-		<title>BroadBulletin</title>
+  <head>
+    <title>BroadBulletin</title>
 
-        <link href="css/normalize.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
         
-        <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700italic,700,500italic,500,400italic,300italic,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700italic,700,500italic,500,400italic,300italic,300' rel='stylesheet' type='text/css'>    
+  </head>
+  <body>
         
-	</head>
-	<body>
-        
-        
-        <header>
-        
-        	<div class="header-wrapper" id="header-wrapper">
-        		<div class="logo" id="logo"><img src="logos/logo-idea.png" width="667" height="99"></div>
-                
-                <div class="searchbar-wrapper" id="searchbar-wrapper">
-                
-                		<form id="newsearch" method="get" action="">
-                			<input id="search" class="search-field" name="q" size="21" maxlength="120" placeholder="What's in the news today?" autofocus>
-                			<input type="submit" value="" class="search-button" id="search-button">
-                    	</form>
-                        
-                        </div>
-                     
-        	</div>
-        
-        
-        
-        </header>
-
-        
-         
-            
-        <div id="" class="content-wrapper">
-            <ul class="posts" id="guardian">
-                
-            </ul>
-            
+    <header>
+      <div class="header-wrapper" id="header-wrapper">
+        <div class="logo" id="logo">
+          <img src="logos/logo-idea.png" width="667" height="99">
+          </div>
+          <div class="searchbar-wrapper" id="searchbar-wrapper">
+            <form id="newsearch" method="get" action="">
+              <input id="search" class="search-field" name="q" size="21" maxlength="120" placeholder="What's in the news today?" autofocus>
+              <input type="submit" value="" class="search-button" id="search-button">
+            </form>      
+          </div>               
         </div>
-        
-	
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-		<script src="webhose.js"></script>
+    </header>
+   
+    <div id="" class="content-wrapper">
+        <ul class="posts" id="guardian">
+        </ul>  
+    </div>
+      
 
-		
-		<script>
-            
-            $("#search-button").click(function() {
-                $("#guardian").empty();
-            })
-            
-            setTimeout(function()
-            { 
-            var search = document.getElementById('newsearch');
-            
-                search.addEventListener('submit',function(e) 
-                {
-                    e.preventDefault()
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="webhose.js"></script>
 
-                    // let user know that we're searching
+  
+    <script>
+          
+      $("#search-button").click(function() 
+      {
+        // empty the interface container
+        $("#guardian").empty()
+      })
+      
+      // why do we need to wait for a couple of seconds here?
+      setTimeout(function()
+      { 
+        var search = document.getElementById('newsearch')
+    
+        search.addEventListener('submit',function(e) 
+        {
+          e.preventDefault()
 
-                    var query = document.getElementById('search').value;
+          // let user know that we're searching
 
-                    var titlequery = document.getElementById('search').value;
+          var query = document.getElementById('search').value
 
-                    var mail_URL = key + titlequery + title + query + performance + site_mail + type
-                    var bbc_URL = key + titlequery + title + query + performance + site_bbc + type
-                    var guardian_URL = key + titlequery + title + query + performance + site_guardian + type
-                    var mirror_URL = key + titlequery + title + query + performance + site_mirror + type
-                    var independent_URL = key + titlequery + title + query + performance + site_independent + type
-                    var express_URL = key + titlequery + title + query + performance + site_express + type
+          // loop through all the sites
+          sites.forEach(function (site)
+          {
+            var webhoseURL = getWebhoseURL(query, site)
+            var containerID = '#guardian'
+            getWebhoseData(webhoseURL, containerID)
+          })
 
-                    callWebhose(mail_URL, '#guardian')
-                    callWebhose(bbc_URL, '#guardian')
-                    callWebhose(guardian_URL, '#guardian')
-                    callWebhose(independent_URL, '#guardian')
-                    callWebhose(express_URL, '#guardian')
+        })
+      }, 2000)                          
 
-                    //console.log(URL)
+    </script>
 
-                })
-            }, 2000)                          
-
-        </script>
-        
-	</body>
+  </body>
 </html>
